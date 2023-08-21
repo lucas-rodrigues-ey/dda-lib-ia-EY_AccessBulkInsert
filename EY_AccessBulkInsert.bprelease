@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bpr:release xmlns:bpr="http://www.blueprism.co.uk/product/release">
+    <bpr:name>EY_AccessBulkInsert</bpr:name>
+    <bpr:release-notes />
+    <bpr:created>2023-07-24 18:04:03Z</bpr:created>
+    <bpr:package-id>42</bpr:package-id>
+    <bpr:package-name>EY_AccessBulkInsert</bpr:package-name>
+    <bpr:user-created-by>admin</bpr:user-created-by>
+    <bpr:contents count="2">
+        <object id="66fb20c9-0778-42fe-8d22-a1436162cd90" name="EY_AccessBulkInsert" xmlns="http://www.blueprism.co.uk/product/process"><process name="EY_AccessBulkInsert" version="1.0" bpversion="7.1.0.62280" narrative="" byrefcollection="true" type="object" runmode="Exclusive"><appdef><element name="Application Root"><id>e0ea1718-8463-4954-baa2-9b1d0df3f10e</id><type>Application</type><basetype>Application</basetype><datatype>unknown</datatype><diagnose>False</diagnose></element></appdef><view><camerax>91</camerax><cameray>105</cameray><zoom version="2">1.25</zoom></view><preconditions /><endpoint narrative="" /><subsheet subsheetid="6db4985f-4a09-4813-8f67-a47b90d9c9d9" type="CleanUp" published="True"><name>Clean Up</name><view><camerax>0</camerax><cameray>119</cameray><zoom version="2">1.25</zoom></view></subsheet><subsheet subsheetid="50bf0095-d5a1-4eb7-b054-e1331a1f0dac" type="Normal" published="True"><name>Bulk Insert</name><view><camerax>0</camerax><cameray>214</cameray><zoom version="2">1.25</zoom></view></subsheet><subsheet subsheetid="b2ff9587-2e13-41c8-b375-4496f7ba2946" type="Normal" published="True"><name>Bulk Insert Fast</name><view><camerax>0</camerax><cameray>94</cameray><zoom version="2">1.25</zoom></view></subsheet><stage stageid="618686ca-37d2-4291-8d1e-f36d58ceae9d" name="Start" type="Start"><loginhibit onsuccess="true" /><display x="120" y="0" /><onsuccess>5e3ec941-b3bb-465e-b0f1-93bb534b55ba</onsuccess></stage><stage stageid="5e3ec941-b3bb-465e-b0f1-93bb534b55ba" name="End" type="End"><loginhibit onsuccess="true" /><display x="120" y="60" /></stage><stage stageid="4ef89829-d181-406e-8970-0cf3b34383b7" name="Stage1" type="ProcessInfo"><loginhibit onsuccess="true" /><display x="-90" y="30" w="300" h="90" /><references><reference>System.dll</reference><reference>System.Data.dll</reference><reference>System.Xml.dll</reference><reference>System.Drawing.dll</reference><reference>C:\Users\WD561VY\OneDrive - EY\Desktop\DLL - VBO EY\DLL - Fast Bulk Insert\Microsoft.Office.Interop.Access.Dao.dll</reference></references><imports><import>System</import><import>System.Drawing</import><import>System.Data</import><import>System.Data.OleDb</import><import>Microsoft.Office.Interop.Access.Dao</import></imports><language>csharp</language><globalcode><![CDATA[]]></globalcode><code><![CDATA[]]></code></stage><stage stageid="3dedecf3-8318-402d-b450-e4446293f621" name="Clean Up" type="SubSheetInfo"><subsheetid>6db4985f-4a09-4813-8f67-a47b90d9c9d9</subsheetid><loginhibit onsuccess="true" /><display x="-240" y="0" w="300" h="90" /></stage><stage stageid="c9600d3c-b81c-4181-85e5-0e937e62e1a1" name="Start" type="Start"><subsheetid>6db4985f-4a09-4813-8f67-a47b90d9c9d9</subsheetid><loginhibit onsuccess="true" /><display x="-30" y="-30" /><onsuccess>73d88df0-d13f-44e4-a5e0-6114b7a79b4d</onsuccess></stage><stage stageid="73d88df0-d13f-44e4-a5e0-6114b7a79b4d" name="End" type="End"><subsheetid>6db4985f-4a09-4813-8f67-a47b90d9c9d9</subsheetid><loginhibit onsuccess="true" /><display x="-30" y="30" /></stage><stage stageid="4580aa9b-d7ee-4231-a8de-e6f57c98f557" name="Bulk Insert" type="SubSheetInfo"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="-225" y="15" w="300" h="90" /></stage><stage stageid="43bea580-0101-42fd-909f-1c6c5c5048f3" name="Start" type="Start"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="15" y="-15" /><inputs><input type="text" name="DBPath" stage="dbPath" /><input type="text" name="TableName" stage="tableName" /><input type="text" name="Fields" stage="fields" /><input type="collection" name="Result" narrative="Collection com os itens a serem inseridos" stage="result" /></inputs><onsuccess>892589b6-bd9b-4999-b688-cdf90e1877ec</onsuccess></stage><stage stageid="8a244bfe-ef12-4c62-b0bb-2d1afba68b77" name="End" type="End"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="15" y="75" /><outputs><output type="flag" name="Success" stage="success" /><output type="text" name="Error Message" stage="errorMessage" /></outputs></stage><stage stageid="fe2c07d2-47a8-40df-b6db-984714dc4851" name="Note1" type="Note"><subsheetid>6db4985f-4a09-4813-8f67-a47b90d9c9d9</subsheetid><loginhibit onsuccess="true" /><narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative><display x="105" y="60" w="150" h="210" /></stage><stage stageid="1381667f-f3e6-4d9a-9499-a84a1efe3126" name="Note2" type="Note"><loginhibit onsuccess="true" /><narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative><display x="255" y="90" w="150" h="210" /></stage><stage stageid="892589b6-bd9b-4999-b688-cdf90e1877ec" name="Bulk Insert" type="Code"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="15" y="30" w="120" h="30" /><inputs><input type="text" name="DBPath" expr="[dbPath]" /><input type="text" name="Fields" expr="[fields]" /><input type="text" name="TableName" expr="[tableName]" /><input type="collection" name="Result" expr="[result]" /></inputs><outputs><output type="text" name="SqlInsert" stage="sqlInsert" /><output type="text" name="SqlSelect" stage="sqlSelect" /><output type="text" name="ErrorMessage" stage="errorMessage" /><output type="flag" name="Success" stage="success" /></outputs><onsuccess>8a244bfe-ef12-4c62-b0bb-2d1afba68b77</onsuccess><code><![CDATA[//***Inicializando as variaveis
+SqlInsert = String.Empty;
+SqlSelect = String.Empty;
+ErrorMessage = String.Empty;
+Success = true;
+String ConnString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + DBPath + ";User Id=admin;Password=;";
+
+try
+{
+	//***Inicio da montagem do select e do insert
+	SqlSelect = String.Concat("SELECT ", Fields, " FROM ", TableName, " WHERE ID = 0");
+	SqlInsert = String.Concat("insert into ", TableName, " (", Fields, ") values (");
+	
+	var fieldssplit = Fields.Split(',');
+	
+	foreach (var item in fieldssplit)
+	{
+		SqlInsert = SqlInsert + "@" + item + ",";
+	}
+	
+	SqlInsert = SqlInsert.Remove(SqlInsert.Length-1);
+	SqlInsert = SqlInsert + ");";
+	//***Fim da montagem do select e do insert
+	
+	
+	//***Abrindo conexão com o BD
+	OleDbConnection OleConn = new OleDbConnection(ConnString);
+	OleDbDataAdapter OleAdp = new OleDbDataAdapter(SqlInsert, OleConn);
+	OleAdp.InsertCommand = new OleDbCommand(SqlInsert);
+	
+	//***para cada field atribui o valor do parametro do field da collection (as colunas da tabela e da collection precisam ter o mesmo nome)
+	foreach (var item in fieldssplit)
+	{
+		OleAdp.InsertCommand.Parameters.Add("@" + item, OleDbType.VarChar, -1, item); 
+	}
+	
+	//***inciando bulk insert
+	OleAdp.InsertCommand.Connection = OleConn;
+	OleAdp.InsertCommand.Connection.Open();
+	OleAdp.Update(Result);
+	OleAdp.InsertCommand.Connection.Close();
+	//***fim bulk insert
+}
+catch (Exception e)
+{
+	Success = false;
+	ErrorMessage = e.Message;
+}]]></code></stage><stage stageid="c6c9e9ef-3317-4640-b11b-508eb7695763" name="result" type="Collection"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="195" w="150" h="30" /><datatype>collection</datatype><private /><alwaysinit /></stage><stage stageid="57b469e8-d54e-4383-9263-c98c5959d338" name="dbPath" type="Data"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="105" w="150" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="d177879d-c258-4fc8-8c16-352c898da89c" name="tableName" type="Data"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="135" w="150" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="a8ff6d22-115d-4ea8-917e-506ba06b2075" name="fields" type="Data"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="165" w="150" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="77b2573b-a021-48d7-ac59-308b64162f0f" name="sqlInsert" type="Data"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="255" w="150" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="760a3c0a-66fc-45a2-88c0-f59bc9dd17ec" name="sqlSelect" type="Data"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="285" w="150" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="b25087dc-8e43-4123-8f84-6a68be10724e" name="errorMessage" type="Data"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="345" w="150" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="aca8b4f3-adf3-4bae-a84c-0ca367232913" name="success" type="Data"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="375" w="150" h="30" /><datatype>flag</datatype><initialvalue>True</initialvalue><private /><alwaysinit /></stage><stage stageid="ec28afc1-b88b-493d-b5e2-de6aafb84d5e" name="Input Variables" type="Block"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="-225" y="75" w="150" h="135" /><font family="Segoe UI" size="10" style="Regular" color="008000" /></stage><stage stageid="6c0a28ea-29c0-4f0d-a6e9-a6490c2577f8" name="Local Variables" type="Block"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="-225" y="225" w="150" h="75" /><font family="Segoe UI" size="10" style="Regular" color="FF99CC" /></stage><stage stageid="5bcd94aa-40b3-4084-aa18-a4297c4941bf" name="Output Variables" type="Block"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><display x="-225" y="315" w="150" h="75" /><font family="Segoe UI" size="10" style="Regular" color="FFFF00" /></stage><stage stageid="49a020d9-87dc-4844-b03d-8dc20de27ac9" name="Note3" type="Note"><subsheetid>50bf0095-d5a1-4eb7-b054-e1331a1f0dac</subsheetid><loginhibit onsuccess="true" /><narrative>Fields must not contain spaces and square braces between headers.
+
+EG: DATA_PROCESSAMENTO_ROBO,ID_FILA,FILIAL,COD_EMPRESA,COD_ESTAB,ANALISE,CFOP,UF,STATUS_NF,MOVIMENTO,NOTA_FISCAL,NUMERO_DOCUMENTO,SIT_TRIB_A,TRIBUTO_ICMS,ALIQ_ICMS,TRIBUTO_IPI,ALIQ_IPI,NCM,ALIQUOTA_TIPI,INICIO_PROCESSAMENTO,FIM_PROCESSAMENTO,TEMPO_PROCESSAMENTO,STATUS,CARGA_EFETUADA,VALIDACAO_SOLICITADA,RESULTADO,DETALHE_EXCECAO,TENTATIVA</narrative><display x="-300" y="165" w="150" h="30" /><font family="Segoe UI" size="10" style="Regular" color="808080" /></stage><stage stageid="f82fd263-9a34-4fe2-9201-412744c199e6" name="Bulk Insert Fast" type="SubSheetInfo"><subsheetid>b2ff9587-2e13-41c8-b375-4496f7ba2946</subsheetid><loginhibit onsuccess="true" /><display x="-225" y="15" w="300" h="90" /></stage><stage stageid="7ce47f60-4e85-4fa7-b8dc-e45366b8f24e" name="Start" type="Start"><subsheetid>b2ff9587-2e13-41c8-b375-4496f7ba2946</subsheetid><loginhibit onsuccess="true" /><display x="15" y="-15" /><inputs><input type="text" name="DBPath" stage="dbPath" /><input type="text" name="TableName" stage="tableName" /><input type="collection" name="InputCollection" narrative="Collection com os itens a serem inseridos" stage="inputCollection" /></inputs><onsuccess>ac9cf74c-5c4a-428e-8133-554fef26be54</onsuccess></stage><stage stageid="368ac474-c78e-47fc-92d0-44bbca0106b3" name="End" type="End"><subsheetid>b2ff9587-2e13-41c8-b375-4496f7ba2946</subsheetid><loginhibit onsuccess="true" /><display x="15" y="120" /><outputs><output type="flag" name="Success" stage="success" /><output type="text" name="Error Message" stage="errorMessage" /></outputs></stage><stage stageid="61fe3315-3322-4932-a100-2bcc97c5db23" name="inputCollection" type="Collection"><subsheetid>b2ff9587-2e13-41c8-b375-4496f7ba2946</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="165" w="150" h="30" /><datatype>collection</datatype><private /><alwaysinit /></stage><stage stageid="e0432b60-7194-4a95-a1eb-de72a0b16a70" name="dbPath" type="Data"><subsheetid>b2ff9587-2e13-41c8-b375-4496f7ba2946</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="105" w="150" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="e2db7047-d307-43d9-87aa-37ddfab6fbf0" name="tableName" type="Data"><subsheetid>b2ff9587-2e13-41c8-b375-4496f7ba2946</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="135" w="150" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="d5ffe8cd-3fa8-418c-930a-3b6392d5c7ad" name="errorMessage" type="Data"><subsheetid>b2ff9587-2e13-41c8-b375-4496f7ba2946</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="225" w="150" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="a5aeca9d-40d6-41e2-b9b2-bd1ebdbd6f27" name="success" type="Data"><subsheetid>b2ff9587-2e13-41c8-b375-4496f7ba2946</subsheetid><loginhibit onsuccess="true" /><display x="-150" y="255" w="150" h="30" /><datatype>flag</datatype><initialvalue>True</initialvalue><private /><alwaysinit /></stage><stage stageid="394be872-e6aa-475c-a052-9ba593dc91c6" name="Input Variables" type="Block"><subsheetid>b2ff9587-2e13-41c8-b375-4496f7ba2946</subsheetid><loginhibit onsuccess="true" /><display x="-225" y="75" w="150" h="105" /><font family="Segoe UI" size="10" style="Regular" color="008000" /></stage><stage stageid="915a737b-1b77-4f94-b0b3-90788cceb743" name="Output Variables" type="Block"><subsheetid>b2ff9587-2e13-41c8-b375-4496f7ba2946</subsheetid><loginhibit onsuccess="true" /><display x="-225" y="195" w="150" h="75" /><font family="Segoe UI" size="10" style="Regular" color="FFFF00" /></stage><stage stageid="e4732f2f-2424-4799-baea-8fda978bf5f6" name="Bulk Insert Fast" type="Code"><subsheetid>b2ff9587-2e13-41c8-b375-4496f7ba2946</subsheetid><loginhibit onsuccess="true" /><display x="15" y="75" w="120" h="30" /><inputs><input type="text" name="DBPath" expr="[dbPath]" /><input type="text" name="TableName" expr="[tableName]" /><input type="collection" name="InputCollection" expr="[inputCollection]" /></inputs><outputs><output type="flag" name="Success" stage="success" /><output type="text" name="ErrorMessage" stage="errorMessage" /></outputs><onsuccess>368ac474-c78e-47fc-92d0-44bbca0106b3</onsuccess><code><![CDATA[// Inicialização das variáveis ErrorMessage e Success
+ErrorMessage = String.Empty;
+Success = true;
+
+// Obtenção do nome do banco de dados (Microsoft Access)
+string databaseName = DBPath;
+
+// Obtém uma DataTable da coleção de entrada
+DataTable dt = InputCollection;
+
+// Obtém o número de colunas e o número de linhas da DataTable
+int columns = dt.Columns.Count;
+int rows = dt.Rows.Count;
+
+try
+{
+    // Cria uma instância do objeto DBEngine da biblioteca Microsoft.Office.Interop.Access.Dao
+    Microsoft.Office.Interop.Access.Dao.DBEngine dbEngine = new Microsoft.Office.Interop.Access.Dao.DBEngine();
+
+    // Abre o banco de dados especificado
+    Microsoft.Office.Interop.Access.Dao.Database db = dbEngine.OpenDatabase(databaseName);
+	
+	//db.Execute("DELETE FROM TableName");
+
+    // Abre um Recordset para uma tabela no banco de dados do Microsoft Access
+    Microsoft.Office.Interop.Access.Dao.Recordset rs = db.OpenRecordset(TableName);
+
+    // Cria um array de campos (Field) com base no número de colunas da DataTable
+    Microsoft.Office.Interop.Access.Dao.Field[] myFields = new Microsoft.Office.Interop.Access.Dao.Field[columns];
+    for (int k = 0; k < columns; k++)
+    {
+        // Obtém o objeto Field correspondente ao nome da coluna na DataTable
+        myFields[k] = rs.Fields[dt.Columns[k].ColumnName.ToString()];
+    }
+
+    // Loop através das linhas da DataTable
+    for (int i = 0; i < rows; i++)
+    {
+        // Adiciona um novo registro no Recordset
+        rs.AddNew();
+
+        // Loop através das colunas da DataTable
+        for (int k = 0; k < columns; k++)
+        {
+            // Define o valor do campo no novo registro com base no valor da DataTable
+            myFields[k].Value = dt.Rows[i][k];
+			//rs.Fields["Field" + (k + 1).ToString()].Value = i + k;
+        }
+
+        // Salva o novo registro no Recordset
+        rs.Update();
+    }
+
+    // Fecha o Recordset e o banco de dados
+    rs.Close();
+    db.Close();
+}
+catch (Exception e)
+{
+    // Se ocorrer uma exceção, marca Success como false e armazena a mensagem de erro em ErrorMessage
+    Success = false;
+    ErrorMessage = e.Message;
+}]]></code></stage><stage stageid="ac9cf74c-5c4a-428e-8133-554fef26be54" name="note" type="Note"><subsheetid>b2ff9587-2e13-41c8-b375-4496f7ba2946</subsheetid><loginhibit onsuccess="true" /><narrative>Execute Bulk Insert</narrative><display x="15" y="30" w="120" h="30" /><font family="Segoe UI" size="10" style="Bold" color="800080" /><onsuccess>e4732f2f-2424-4799-baea-8fda978bf5f6</onsuccess></stage></process></object>
+        <object-group id="ae289d4b-ed7c-4e59-87ba-a061b9673824" name="Conexao Digital/Assets EY" isDefaultGroup="False" xmlns="http://www.blueprism.co.uk/product/object-group">
+            <members>
+                <object id="66fb20c9-0778-42fe-8d22-a1436162cd90" />
+            </members>
+        </object-group>
+    </bpr:contents>
+</bpr:release>
